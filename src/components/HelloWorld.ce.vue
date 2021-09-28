@@ -2,14 +2,12 @@
   <div class="box is-blue">{{ msg }}</div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
+<script>
+export default {
   props: {
     msg: String,
   },
-});
+};
 </script>
 
 <style scoped>

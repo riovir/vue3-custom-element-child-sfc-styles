@@ -7,18 +7,17 @@
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script>
 import HelloWorld from "./components/HelloWorld.vue";
 import HelloWorldCe from "./components/HelloWorld.ce.vue";
 
-export default defineComponent({
+export default {
   name: "App",
   components: {
     HelloWorld,
     HelloWorldCe,
   },
-});
+};
 </script>
 
 <style>
