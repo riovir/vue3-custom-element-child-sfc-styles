@@ -1,5 +1,5 @@
 <template>
-  <div class="box is-green">{{ msg }}</div>
+  <div class="box is-blue">{{ msg }}</div>
 </template>
 
 <script lang="ts">
@@ -13,8 +13,8 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.is-green {
-  background: hsl(130, 60%, 70%);
-  border-color: hsl(130, 60%, 30%);
+.is-blue {
+  background: hsl(190, 60%, 70%);
+  border-color: hsl(190, 60%, 30%);
 }
 </style>
