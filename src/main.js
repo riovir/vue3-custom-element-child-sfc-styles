@@ -26,7 +26,8 @@ if (USE_WORKAROUND) {
 
 /** Returns the styles of a Vue component including all of its child components'. */
 function deepStylesOf({ styles = [], components = {} }) {
-  return [...styles, ...Object.values(components).flatMap(deepStylesOf)]
+  const unique = array => [...new Set(array)];
+  return unique([...styles, ...Object.values(components).flatMap(deepStylesOf)]);
 }
 /** </Workaround> */
 
