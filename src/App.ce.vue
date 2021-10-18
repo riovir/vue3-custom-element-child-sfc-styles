@@ -2,19 +2,16 @@
   <section class="layout">
     <h1>Child styles are not applied</h1>
     <em>They were supposed to get colored backgrounds.</em>
-    <HelloWorld msg="Preferred: non-CE child styles get added to shadow root" />
-    <HelloWorldCe msg="Also fine: if the child has to a CE too" />
+    <HelloWorldCe msg="Background is only colored when the workaround is enabled" />
   </section>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import HelloWorldCe from "./components/HelloWorld.ce.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
     HelloWorldCe,
   },
 };

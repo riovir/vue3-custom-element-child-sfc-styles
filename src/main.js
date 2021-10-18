@@ -17,15 +17,16 @@ const USE_WORKAROUND = false;
  *
  * Unfortunately it's error prone and results in poor dev experience:
  * - load everything as CE
- * - import every child component used
- * - manually add their styles to the root element
- * - [if TypeScript is set to strict, sort out the missing "styles" prop from the component type] */
-
-// import HelloWorld from "./components/HelloWorld.vue"; // Has undefined styles prop
-import HelloWorldCe from "./components/HelloWorld.ce.vue";
+ * - recursively add child element styles to the root element
+ * - [if TypeScript is set to strict, sort out the "styles" prop being set to any] */
 
 if (USE_WORKAROUND) {
-  App.styles = App.styles.concat(HelloWorldCe.styles);
+  App.styles = deepStylesOf(App);
+}
+
+/** Returns the styles of a Vue component including all of its child components'. */
+function deepStylesOf({ styles = [], components = {} }) {
+  return [...styles, ...Object.values(components).flatMap(deepStylesOf)]
 }
 /** </Workaround> */
 
